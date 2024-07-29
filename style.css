@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+body.light-theme {
+    background: linear-gradient(-45deg, #f6d365, #fda085, #f6d365, #fda085);
+}
+
+body.dark-theme {
+    background: linear-gradient(-45deg, #2c3e50, #4a69bd, #6a89cc, #82ccdd);
+}
+
+.box {
+    height: 65vh;
+    width: 580px;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.light-theme .box {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.dark-theme .box {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+#theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.light-theme #theme-toggle {
+    background: rgba(253, 160, 133, 0.6);
+    color: #FFFFFF;
+    box-shadow: 0 4px 15px rgba(253, 160, 133, 0.3);
+}
+
+.dark-theme #theme-toggle {
+    background: rgba(187, 134, 252, 0.6);
+    color: #1A202C;
+    box-shadow: 0 4px 15px rgba(187, 134, 252, 0.3);
+}
+
+#theme-toggle:hover {
+    transform: translateY(-2px);
+}
+
+.box #display {
+    height: 15vh;
+    width: 100%;
+    text-align: center;
+    font-size: 3.5rem;
+    line-height: 15vh;
+    transition: all 0.3s ease;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.light-theme .box #display {
+    color: #fd7e14;
+}
+
+.dark-theme .box #display {
+    color: #E2E8F0;
+}
+
+.box form {
+    height: 35vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.light-theme .box form {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .box form {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.box form input {
+    width: 120px;
+    height: 80px;
+    border: none;
+    outline: none;
+    font-size: 48px;
+    text-align: center;
+    background: transparent;
+    transition: all 0.3s ease;
+    margin: 0 10px;
+    border-radius: 10px;
+}
+
+.box form input::-webkit-outer-spin-button,
+.box form input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.light-theme .box form input {
+    color: #fd7e14;
+    border-bottom: 3px solid rgba(253, 160, 133, 0.5);
+}
+
+.dark-theme .box form input {
+    color: #E2E8F0;
+    border-bottom: 3px solid rgba(187, 134, 252, 0.5);
+}
+
+.box form input::placeholder {
+    font-size: 20px;
+}
+
+.light-theme .box form input::placeholder {
+    color: rgba(253, 126, 20, 0.6);
+}
+
+.dark-theme .box form input::placeholder {
+    color: rgba(226, 232, 240, 0.6);
+}
+
+.box .btn {
+    height: 15vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.box .btn button {
+    padding: 12px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    backdrop-filter: blur(5px);
+}
+
+.light-theme .box .btn button {
+    background: rgba(253, 160, 133, 0.7);
+    color: #FFFFFF;
+    box-shadow: 0 4px 15px rgba(253, 160, 133, 0.3);
+}
+
+.light-theme .box .btn button:hover {
+    background: rgba(253, 126, 20, 0.8);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(253, 126, 20, 0.4);
+}
+
+.dark-theme .box .btn button {
+    background: rgba(187, 134, 252, 0.7);
+    color: #1A202C;
+    box-shadow: 0 4px 15px rgba(187, 134, 252, 0.3);
+}
+
+.dark-theme .box .btn button:hover {
+    background: rgba(55, 0, 179, 0.8);
+    color: #E2E8F0;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(55, 0, 179, 0.4);
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+.box .btn button:active {
+    transform: scale(0.95);
+    animation: pulse 0.3s ease-out;
+}
